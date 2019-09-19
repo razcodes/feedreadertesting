@@ -1,6 +1,7 @@
 #### Steps required to successfully run the application
 
-Run the `index.html` file with your browser in order to load the website locally.
+* Download the repository files.
+* Run the `index.html` file with your browser in order to load the website locally.
 
 #### What did I learn?
 
