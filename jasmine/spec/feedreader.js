@@ -88,21 +88,21 @@ $(function() {
 
     describe("New Feed Selection", () => {
         
-        let firstArticle;
-        let secondArticle;
+        let firstFeed;
+        let secondFeed;
 
         beforeEach( (done) => {
             loadFeed(0, () => {
-                firstArticle = document.querySelector('.entry-link').getAttribute("href");
+                firstFeed = document.querySelector(".feed").innerHTML;
                 loadFeed(1, () => {
-                    secondArticle = document.querySelector('.entry-link').getAttribute("href");
+                    secondFeed = document.querySelector(".feed").innerHTML;
                     done();
                 });
             });
         });
 
         it('content changes at new feed load', () => {  
-            expect(firstArticle).not.toEqual(secondArticle);
+            expect(firstFeed).not.toEqual(secondFeed);
         });
     });
 }());
