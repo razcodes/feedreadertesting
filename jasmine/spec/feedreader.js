@@ -68,20 +68,20 @@ $(function() {
          */
     describe('Initial Entries', () => {
 
-        const feed = document.getElementsByClassName("feed")[0];
-
+        let entryElement;
 
         beforeEach( (done) => {
             loadFeed(0, () => {
+                entryElement = document.querySelector(".feed .entry");
                 done();
             });
         });
 
         it('loads feed properly', () => {
-            expect(feed.childNodes.length).toBeGreaterThan(0);
+            expect(entryElement).toBeDefined();
+            expect(entryElement).not.toBeNull();
         });
     });
-
         /* A test that ensures when a new feed is loaded
          * by the loadFeed function the content actually changes.
          */
@@ -94,10 +94,10 @@ $(function() {
         beforeEach( (done) => {
             loadFeed(0, () => {
                 firstArticle = document.querySelector('.entry-link').getAttribute("href");
-            });
-            loadFeed(1, () => {
-                secondArticle = document.querySelector('.entry-link').getAttribute("href");
-                done();
+                loadFeed(1, () => {
+                    secondArticle = document.querySelector('.entry-link').getAttribute("href");
+                    done();
+                });
             });
         });
 
